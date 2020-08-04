@@ -15,6 +15,9 @@ export const SCREENS: FinderScreenNavigationConfig[] = [
     name: ScreenConstants.SELECT_QUESTION,
   },
   {
+    name: ScreenConstants.VIEW_QUESTION,
+  },
+  {
     name: ScreenConstants.CREATE_QUIZ,
   },
 ];
