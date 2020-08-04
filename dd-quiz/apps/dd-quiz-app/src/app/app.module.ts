@@ -10,9 +10,13 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { FinderState } from './core/store/finder.state';
 import { LayoutState } from './core/store/layout.state';
+import { SelectQuizScreenComponent } from './modules/select-quiz/components/select-quiz-screen/select-quiz-screen.component';
+import { SelectQuestionScreenComponent } from './modules/select-question/components/select-question-screen/select-question-screen.component';
+import { ViewQuestionScreenComponent } from './modules/view-question/components/view-question-screen/view-question-screen.component';
+import { CreateQuizScreenComponent } from './modules/create-quiz/components/create-quiz-screen/create-quiz-screen.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SelectQuizScreenComponent, SelectQuestionScreenComponent, ViewQuestionScreenComponent, CreateQuizScreenComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
