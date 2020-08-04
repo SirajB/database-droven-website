@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "projects": {
+    "dd-quiz-app": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/dd-quiz-app",
+      "sourceRoot": "apps/dd-quiz-app/src",
+      "prefix": "dd-quiz",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/dd-quiz-app",
+            "index": "apps/dd-quiz-app/src/index.html",
+            "main": "apps/dd-quiz-app/src/main.ts",
+            "polyfills": "apps/dd-quiz-app/src/polyfills.ts",
+            "tsConfig": "apps/dd-quiz-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/dd-quiz-app/src/favicon.ico",
+              "apps/dd-quiz-app/src/assets"
+            ],
+            "styles": ["apps/dd-quiz-app/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/dd-quiz-app/src/environments/environment.ts",
+                  "with": "apps/dd-quiz-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "dd-quiz-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "dd-quiz-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "dd-quiz-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/dd-quiz-app/tsconfig.app.json",
+              "apps/dd-quiz-app/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/dd-quiz-app/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/dd-quiz-app/jest.config.js",
+            "tsConfig": "apps/dd-quiz-app/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/dd-quiz-app/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "dd-quiz-app-e2e": {
+      "root": "apps/dd-quiz-app-e2e",
+      "sourceRoot": "apps/dd-quiz-app-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/dd-quiz-app-e2e/cypress.json",
+            "tsConfig": "apps/dd-quiz-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "dd-quiz-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "dd-quiz-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/dd-quiz-app-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/dd-quiz-app-e2e/**/*"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "dd-quiz-app"
+}
