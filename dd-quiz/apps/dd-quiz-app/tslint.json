@@ -2,9 +2,7 @@
   "extends": "../../tslint.json",
   "rules": {
     "directive-selector": [true, "attribute", "ddQuiz", "camelCase"],
-    "component-selector": [true, "element", "dd-quiz", "kebab-case"]
-  },
-  "linterOptions": {
-    "exclude": ["!**/*"]
+    "component-selector": [true, "element", "dd-quiz", "kebab-case"],
+    "no-inferrable-types": [false, "ignore-params"]
   }
 }

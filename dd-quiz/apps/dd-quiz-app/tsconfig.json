@@ -3,11 +3,12 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "@dd/modules/*": ["app/modules/*"]
+      "@dd/modules/*": ["app/modules/*"],
+      "@dd/core/*": ["app/core/*"],
+      "@dd/shared/*": ["app/shared/*"]
     },
     "types": ["node", "jest"],
     "downlevelIteration": true
   },
-  "files": [],
-  "include": ["**/*.s"]
+  "include": ["**/*.ts"]
 }
