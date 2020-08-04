@@ -16,7 +16,7 @@ import { ViewQuestionScreenComponent } from './modules/view-question/components/
 import { CreateQuizScreenComponent } from './modules/create-quiz/components/create-quiz-screen/create-quiz-screen.component';
 
 @NgModule({
-  declarations: [AppComponent, SelectQuizScreenComponent, SelectQuestionScreenComponent, ViewQuestionScreenComponent, CreateQuizScreenComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
