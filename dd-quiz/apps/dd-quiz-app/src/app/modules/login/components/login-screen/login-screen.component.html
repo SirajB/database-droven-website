@@ -1,1 +1,35 @@
-<p>login-screen works!</p>
+<main class="login">
+  <section class="content">
+    <div class="title-wrapper">
+      <h1 class="title">Quizzes Database Portal</h1>
+
+      <h3 class="title--login">Login</h3>
+    </div>
+
+    <div class="login-form">
+      <input
+        type="text"
+        name="username"
+        #username
+        class="login-form-field"
+        placeholder="Username"
+        (keyup.enter)="updateUsername(username.value)"
+        (blur)="updateUsername(username.value)"
+      />
+      <input
+        type="password"
+        name="password"
+        #password
+        class="login-form-field"
+        (keyup.enter)="updatePassword(password.value)"
+        (blur)="updatePassword(password.value)"
+        placeholder="Password"
+      />
+      <button (click)="onLogin()">Login</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>WebbiSkools Ltd</p>
+  </footer>
+</main>

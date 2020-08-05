@@ -1,31 +1,27 @@
-// import { TestBed, async } from '@angular/core/testing';
-// import { AppComponent } from './app.component';
+import { TestBed, async } from '@angular/core/testing';
+import { AppComponent } from './app.component';
 
-// describe('AppComponent', () => {
-//   beforeEach(async(() => {
-//     TestBed.configureTestingModule({
-//       declarations: [AppComponent],
-//     }).compileComponents();
-//   }));
+describe.skip('AppComponent', () => {
+  let fixture;
+  let instance;
+  beforeEach(async(() => {
+    console.log('HIT');
+    TestBed.configureTestingModule({
+      declarations: [AppComponent],
+    })
+      .compileComponents()
+      .then(() => {
+        fixture = TestBed.createComponent(AppComponent);
+        console.log('FIXTURE: ', fixture);
+        instance = fixture.componentInstance;
+      });
+  }));
 
-//   it('should create the app', () => {
-//     const fixture = TestBed.createComponent(AppComponent);
-//     const app = fixture.componentInstance;
-//     expect(app).toBeTruthy();
-//   });
+  it('should create the app', () => {
+    expect(instance).toBeTruthy();
+  });
 
-//   it(`should have as title 'dd-quiz-app'`, () => {
-//     const fixture = TestBed.createComponent(AppComponent);
-//     const app = fixture.componentInstance;
-//     expect(app.title).toEqual('dd-quiz-app');
-//   });
-
-//   it('should render title', () => {
-//     const fixture = TestBed.createComponent(AppComponent);
-//     fixture.detectChanges();
-//     const compiled = fixture.nativeElement;
-//     expect(compiled.querySelector('h1').textContent).toContain(
-//       'Welcome to dd-quiz-app!'
-//     );
-//   });
-// });
+  it(`should have as title 'dd-quiz'`, () => {
+    expect(instance.title).toEqual('dd-quiz');
+  });
+});

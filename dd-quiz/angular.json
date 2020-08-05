@@ -91,7 +91,6 @@
           "options": {
             "jestConfig": "apps/dd-quiz-app/jest.config.js",
             "tsConfig": "apps/dd-quiz-app/tsconfig.spec.json",
-            "passWithNoTests": true,
             "setupFile": "apps/dd-quiz-app/src/test-setup.ts"
           }
         }
