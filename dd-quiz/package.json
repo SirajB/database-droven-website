@@ -9,6 +9,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "prefill": "ts-node apps/dd-quiz-app/src/app/core/database/index.ts",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
     "affected:apps": "nx affected:apps",
@@ -40,9 +41,11 @@
     "@ngxs/devtools-plugin": "^3.6.2",
     "@ngxs/store": "^3.6.2",
     "@nrwl/angular": "10.0.7",
+    "bcryptjs": "^2.4.3",
     "pg": "^8.3.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.5",
+    "tslib": "^2.0.0",
     "typeorm": "^0.2.25",
     "zone.js": "^0.10.2"
   },
@@ -62,9 +65,10 @@
     "eslint": "6.8.0",
     "jest": "^26.0.0",
     "jest-preset-angular": "8.1.2",
+    "patch-package": "^6.2.2",
     "prettier": "2.0.4",
     "ts-jest": "^26.1.4",
-    "ts-node": "~7.0.0",
+    "ts-node": "^7.0.1",
     "tslint": "~6.0.0",
     "typescript": "~3.9.3"
   }
